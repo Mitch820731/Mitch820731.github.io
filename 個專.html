@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新瑪奇英雄傳</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            /*計算寬度時，包含padding*/
+        }
+
+        body {
+            margin: 0;
+            padding-top: 120px;
+            background-color: #333;
+        }
+
+        .d-flex {
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .navbar {
+            /* height: 120px; */
+            background-color: #333;
+            padding: 5px 0;
+            /*把nav高度撐高*/
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .mobile-navbar {
+            background-color: black;
+            float: right;
+            color: white;
+            font-size: 20px;
+            border-top: 1px solid black;
+            display: none;
+            position: fixed;
+            right: 0;
+            z-index: 1;
+            /*前後排列 數字越大越前面*/
+        }
+
+        .mobile-style {
+            list-style-type: none;
+            padding: 4px 10px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .mobile-style a {
+            text-decoration: none;
+            color: beige;
+            padding: 0 6px;
+        }
+
+
+        .mobile-navbar.active {
+            display: block;
+        }
+
+        nav.navbar .logo {
+            height: 95px;
+        }
+
+        nav .nav-items {
+            margin-top: 40px;
+            float: right;
+        }
+
+        .nav-btn {
+            font-size: 50px;
+            color: aqua;
+            float: right;
+            display: none;
+            margin-top: 20px;
+        }
+
+        nav .nav-items a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .box {
+            width: 33.33%;
+            float: left;
+            padding: 20px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        @media screen and (max-width:1200px) {
+
+            /*螢幕尺寸小於1200px時，套用以下css*/
+            .box {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width:696px) {
+
+            /*螢幕尺寸小於696px時，套用以下css*/
+            nav .nav-items {
+                display: none;
+            }
+
+            .nav-btn {
+                display: block;
+            }
+
+        }
+
+        /*youtube影片寬高符合rwd*/
+        .video-container {
+            display: block;
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        /*youtube影片定位*/
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0 none;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .title_world {
+            padding: 3px 5px;
+            color: aliceblue;
+            border: 2px solid white;
+            display: inline-block;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 30px;
+        }
+
+        h1 {
+            margin: 1px;
+        }
+
+        .container .world_img {
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .world_main {
+            text-align: center;
+            color: aliceblue;
+            letter-spacing: 5px;
+            line-height: 30px;
+            font-size: 20px;
+        }
+
+        .title_Introduction {
+            padding: 3px 5px;
+            color: aliceblue;
+            border: 2px solid white;
+            display: inline-block;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="d_flex">
+                <a href="/">
+                    <img class="logo" src="/官網LOGO.jpg" alt="Logo">
+                </a>
+                <div class="nav-items">
+                    <a href="#">世界觀</a>
+                    <a href="#">遊戲簡介</a>
+                    <a href="#">社交系統</a>
+                    <a href="#">職業介紹</a>
+                    <a href="#">裝備</a>
+                    <a href="#">下載專區</a>
+                </div>
+                <div id="nav-btn" class="nav-btn">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-navbar">
+        <ul class="mobile-style">
+            <li><a href="#">世界觀</a></li>
+            <li><a href="#">遊戲簡介</a></li>
+            <li><a href="#">社交系統</a></li>
+            <li><a href="#">職業介紹</a></li>
+            <li><a href="#">裝備</a></li>
+            <li><a href="#">下載專區</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/aKyH-Pl3GEg" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="title_world">
+            <h1>世界觀</h1>
+        </div>
+        <div>
+            <img class="world_img" src="/01-工作區/02-圖片/01-形象圖/intro-1-01.jpg" alt="世界觀">
+        </div>
+        <div>
+            <!-- br=強制換行 -->
+            <p class="world_main">時間一分一秒流逝，誰也記不得等待了多久，殘存的僅是那個虛無縹緲的故事，以及〝約定〞。<br>
+                無數個歷史洪流中，人們祈禱、戰鬥，因為他們堅信，當最後一滴魔族的血灑落地面， 女神將展開翅膀，降臨世上。<br>
+                為了打開愛爾琳之門，人類不惜背水一戰。<br>
+                但是，當人類經歷無數的戰鬥和死亡，女神始終沒有出現，疑問開始蔓延到每個人的心裡。<br>
+                現在這命運的〝約定〞落到了你的手中。<br>
+                戰鬥吧 ! 也許你們努力，會讓這個〝約定〞實現 ···
+            </p>
+        </div>
+        <div class="title_Introduction">
+            <h1>簡介</h1>
+        </div>
+        <div class="introduction">
+            <div class="game_quality">
+                <div class="game_quality_photo"><img src="/01-工作區/02-圖片/07-簡介/01-遊戲畫面/225645324_86522517-01.jpg" alt=""></div>
+                <div class="game_quality_title">遊戲畫面</div>
+                <div class="game_quality_main">逼真的畫面<br>絢麗的特效!</div>
+            </div>
+            <div class="Manipulation">
+                <div class="Manipulation_photo"><img src="/01-工作區/02-圖片/07-簡介/02-操控性/242921029_52250471-01.jpg" alt=""></div>
+                <div class="Manipulation_title">操控性</div>
+                <div class="Manipulation_main">即時動作<br>挑戰自己的極限反應!</div>
+            </div>
+            <div class="story">
+                <div class="story_photo"><img src="/01-工作區/02-圖片/07-簡介/03-故事劇情/160270362_64579349-01.jpg" alt=""></div>
+                <div class="story_title">故事劇情</div>
+                <div class="story_main">環環相扣的劇情<br>成為故事中的主角!</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var mobilestyletoggle = document.querySelector("#nav-btn")
+        mobilestyletoggle.onclick = function () {
+            document.querySelector(".mobile-navbar").classList.toggle("active")
+        }
+        /*基本的卷軸*/
+        var body = document.querySelector("body")
+        var scrolltop;
+        window.onscroll = function () { };
+
+    </script>
+</body>
+
+</html>
