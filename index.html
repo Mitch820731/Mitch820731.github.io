@@ -8,7 +8,7 @@
     <title>新瑪奇英雄傳</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
-
+    <link href="/css/lightbox.min.css" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -188,6 +188,49 @@
             margin: 10px 0;
             font-size: 30px;
         }
+
+        .card_1 {
+            padding: 0 20px;
+        }
+
+        .img_1 {
+            border: 3px solid goldenrod;
+            border-radius: 25px;
+        }
+
+        .introduction {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        img {
+            border-radius: 25px;
+        }
+
+        .title {
+            text-indent: 10px;
+            text-align: left;
+            font-size: 30px;
+            color: white;
+        }
+
+        .main {
+            color: aliceblue;
+            letter-spacing: 10px;
+            line-height: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .title_Social {
+            padding: 3px 5px;
+            color: aliceblue;
+            border: 2px solid white;
+            display: inline-block;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 30px;
+        }
     </style>
 </head>
 
@@ -247,26 +290,49 @@
             <h1>簡介</h1>
         </div>
         <div class="introduction">
-            <div class="game_quality">
-                <div class="game_quality_photo"><img src="/01-工作區/02-圖片/07-簡介/01-遊戲畫面/225645324_86522517-01.jpg" alt=""></div>
-                <div class="game_quality_title">遊戲畫面</div>
-                <div class="game_quality_main">逼真的畫面<br>絢麗的特效!</div>
+            <div class="game_quality card_1">
+                <div class="photo">
+                    <a href="/01-工作區/02-圖片/07-簡介/01-遊戲畫面/225645324_86522517.jpg" data-lightbox="image-1" data-title="遊戲畫面"><img
+                            class="img_1" width="100%" src="/01-工作區/02-圖片/07-簡介/01-遊戲畫面/225645324_86522517-01.jpg" alt="遊戲畫面"></a>
+                </div>
+                <div class="title">遊戲畫面</div>
+                <div class="main">逼真的畫面<br>絢麗的特效!</div>
             </div>
-            <div class="Manipulation">
-                <div class="Manipulation_photo"><img src="/01-工作區/02-圖片/07-簡介/02-操控性/242921029_52250471-01.jpg" alt=""></div>
-                <div class="Manipulation_title">操控性</div>
-                <div class="Manipulation_main">即時動作<br>挑戰自己的極限反應!</div>
+            <div class="Manipulation card_1">
+                <div class="photo">
+                    <a href="/01-工作區/02-圖片/07-簡介/02-操控性/242921029_36836188.jpg" data-lightbox="image-1" data-title="遊戲畫面"><img
+                            class="img_1" width="100%" src="/01-工作區/02-圖片/07-簡介/02-操控性/242921029_36836188-01.jpg" alt="操控性"></a></div>
+                <div class="title">操控性</div>
+                <div class="main">即時動作<br>挑戰自己的極限反應!</div>
             </div>
-            <div class="story">
-                <div class="story_photo"><img src="/01-工作區/02-圖片/07-簡介/03-故事劇情/160270362_64579349-01.jpg" alt=""></div>
-                <div class="story_title">故事劇情</div>
-                <div class="story_main">環環相扣的劇情<br>成為故事中的主角!</div>
+            <div class="story card_1">
+                <div class="photo"><a href="/01-工作區/02-圖片/07-簡介/03-故事劇情/160270362_64579349.jpg" data-lightbox="image-1"
+                        data-title="遊戲畫面"><img class="img_1" width="100%" src="/01-工作區/02-圖片/07-簡介/03-故事劇情/160270362_64579349-01.jpg"
+                            alt="故事劇情"></a></div>
+                <div class="title">故事劇情</div>
+                <div class="main">環環相扣的劇情<br>成為故事中的主角!</div>
+            </div>
+        </div>
+        <div class="title_Social">
+            <h1>社交</h1>
+            <div class="Social">
+                <div class="friends">
+                    <div class="photo"></div>
+                    <div class="title"></div>
+                    <div class="main"></div>
+                </div>
+                <div class="guild">
+                    <div class="photo"></div>
+                    <div class="title"></div>
+                    <div class="main"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
+    <script>
         var mobilestyletoggle = document.querySelector("#nav-btn")
         mobilestyletoggle.onclick = function () {
             document.querySelector(".mobile-navbar").classList.toggle("active")
@@ -277,6 +343,7 @@
         window.onscroll = function () { };
 
     </script>
+    <script src="/js/lightbox.min.js"></script>
 </body>
 
 </html>
